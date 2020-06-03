@@ -29,4 +29,23 @@ it should use today’s date to get the month and year.
 
 import sys
 import calendar
+from calendar import TextCalendar
 from datetime import datetime
+
+print(len(sys.argv))
+cal = TextCalendar()
+
+if len(sys.argv) == 1:
+  cal.prmonth(theyear=2020, themonth=6)
+
+elif len(sys.argv) == 2:
+  month = int(sys.argv[1])
+  cal.prmonth(theyear=2020, themonth=month)
+
+elif len(sys.argv) == 3:
+  month = int(sys.argv[1])
+  year = int(sys.argv[2])
+  cal.prmonth(theyear=year, themonth=month)
+
+elif len(sys.argv) > 3:
+  print('Too many inputs')
